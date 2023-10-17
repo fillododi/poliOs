@@ -1,5 +1,2 @@
-loader.o
-kernel.o
-kernel.bin
-/iso
-kernel.iso
+/build
+/dist
