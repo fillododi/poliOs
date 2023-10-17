@@ -7,11 +7,11 @@ i386_CPP_OBJECT_FILES := $(patsubst src/kernel/%.cpp, build/i386/%.o, $(CPP_SOUR
 x86_64_ASM_OBJECT_FILES := $(patsubst src/x86_64/%.asm, build/x86_64/%.o, $(x86_64_ASM_SOURCE_FILES))
 x86_64_CPP_OBJECT_FILES := $(patsubst src/kernel/%.cpp, build/x86_64/%.o, $(CPP_SOURCE_FILES))
 
-i386GCCPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
+i386GCCPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -I src/interfaces -ffreestanding
 i386ASPARAMS = --32
 i386LDPARAMS = -m elf_i386
 
-x86_64GCCPARAMS = -m elf_x86_64 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -I src/interfaces -ffreestanding
+x86_64GCCPARAMS = -m64 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -I src/interfaces -ffreestanding
 x86_64NASMPARAMS = -f elf64
 x86_64LDPARAMS = -m elf_x86_64
 
