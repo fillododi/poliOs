@@ -1,5 +1,6 @@
 #include "types.h"
 #include "print.h"
+#include "gdt.h"
 
 typedef void (*constructor)();
 extern "C" constructor start_ctors;
@@ -16,5 +17,6 @@ extern "C" void start(void* multiboot_structure, uint32_t magicNumber){
     printString("Hello ");
     setPrintColor(COLOR_LIGHT_RED, COLOR_BLACK);
     printString("World!\n");
+    GlobalDescriptorTable gdt;
     while(1);
 }
